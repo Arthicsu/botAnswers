@@ -8,12 +8,8 @@ from handlers import other_handlers, user_handlers, pq_handlers
 async def main():
     config: Config = load_config()
     bot = Bot(token=config.tg_bot.token)
-
-    # Инициализируем память для FSM и диспетчер
     storage = MemoryStorage()
     dp = Dispatcher(storage=storage)
-
-    # Регистрируем роутеры
     dp.include_router(user_handlers.router)
     dp.include_router(other_handlers.router)
     dp.include_router(pq_handlers.router)

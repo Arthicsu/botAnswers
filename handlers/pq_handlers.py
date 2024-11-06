@@ -5,8 +5,8 @@ from aiogram.utils.keyboard import ReplyKeyboardBuilder
 from database.models import polls, quizzes
 from keyboards.keyboard_utils import keyboard as default_keyboard
 from StatesGroup.state import UserMode
+from database.models import user_data
 
-user_data = {}
 router = Router()
 
 # Функция для отображения вопроса из опроса
